@@ -3,7 +3,7 @@
 # Write a Python program to create a lambda function that adds 25 to a given number passed in as an argument.
 
 
-#Function to add any given number with 15
+#Function to add any given number with 25
 def add(x):
     return lambda num :  x + num  #lambda function
 
