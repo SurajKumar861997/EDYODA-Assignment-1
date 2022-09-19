@@ -72,26 +72,28 @@ SELECT
 FROM
     SalesPeople
 WHERE
-    Sname LIKE '%A' OR '%a';
+    Sname LIKE '%A'OR "a";
+
 
 # Q2. Display all the Salesperson whose all orders worth is more than Rs. 2000.
 SELECT Snum,Onum,Amt FROM orders WHERE Amt > 2000;
-# OR for full info
+# OR for full information
 SELECT * FROM orders WHERE Amt > 2000;
 
 
 # Q3. Count the number of Salesperson belonging to Newyork.
 SELECT 
-    Sname, City, COUNT(*)
+    COUNT(*) AS from_Newyork
 FROM
     SalesPeople
 WHERE
     City = 'Newyork'
 GROUP BY Sname , City;
 
+
 # Q4. Display the number of Salespeople belonging to London and belonging to Paris.
 SELECT 
-    Sname, City, COUNT(*)
+    Sname, City
 FROM
     SalesPeople
 WHERE
@@ -101,7 +103,7 @@ GROUP BY Sname , City;
 
 # Q5. Display the number of orders taken by each Salesperson and their date of orders.
 SELECT 
-    Odate, Snum, COUNT(*)
+    Odate, Snum, COUNT(*) AS no_of_orders
 FROM
     Orders
 GROUP BY Odate , Snum;
